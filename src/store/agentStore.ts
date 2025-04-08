@@ -18,6 +18,7 @@ interface AgentState {
   updateNode: (id: string, data: any) => void;
   removeNode: (id: string) => void;
   addEdge: (edge: Edge) => void;
+  updateEdge: (id: string, data: any) => void;
   removeEdge: (id: string) => void;
   saveAgent: () => Promise<void>;
   loadAgent: (id: number) => Promise<void>;
@@ -64,6 +65,13 @@ export const useAgentStore = create<AgentState>((set, get) => ({
   addEdge: (edge) =>
     set((state) => ({
       edges: [...state.edges, edge],
+    })),
+
+  updateEdge: (id, data) =>
+    set((state) => ({
+      nodes: state.nodes.map((node) =>
+        node.id === id ? { ...node, data: { ...node.data, ...data } } : node
+      ),
     })),
 
   removeEdge: (id) =>
