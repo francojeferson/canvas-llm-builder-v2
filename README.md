@@ -87,3 +87,22 @@ npm run dev
 ```
 
 7. Open http://localhost:3000 in your browser
+
+## Usage Guide
+
+### Building an Agent
+
+1. **Configure Agent Basics**:
+   - Set a name and global prompt in the top section
+   - The global prompt applies to all states
+2. **Create States**:
+   - Click "Add State" to create new conversation states
+   - Configure each state with a name and state-specific prompt
+   - Mark states as Start or End as appropriate
+   - Drag states to position them on the canvas
+3. **Define Transitions**:
+   - Connect states by dragging from one state's handle to another
+   - Add transition conditions to determine when to move between states
+   - Conditions use intent matching (not just keywords)
+4. **Save Your Agent**:
+   - Click "Save Agent" to persist your configuration
