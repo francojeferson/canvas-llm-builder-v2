@@ -37,3 +37,53 @@ cd canvas-llm-builder-v2
 npm install reactflow zustand @vercel/postgres drizzle-orm drizzle-kit openai
 npm install -D @types/node typescript
 ```
+
+## Local Setup
+
+### Prerequisites
+
+- Node.js 18+
+- PostgreSQL 12+
+- OpenAI API key
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/canvas-llm-builder-v2.git
+cd canvas-llm-builder-v2
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Create a .env.local file:
+
+```bash
+POSTGRES_URL="postgres://username:password@localhost:5432/canvas_llm_v2"
+OPENAI_API_KEY="your-openai-api-key"
+```
+
+4. Create the database:
+
+```sql
+CREATE DATABASE canvas_llm_v2;
+```
+
+5. Run database migrations:
+
+```bash
+npx drizzle-kit push:pg
+```
+
+6. Start the development server:
+
+```bash
+npm run dev
+```
+
+7. Open http://localhost:3000 in your browser
