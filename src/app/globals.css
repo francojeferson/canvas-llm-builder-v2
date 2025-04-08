@@ -1,42 +1,170 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --primary-color: #1677ff;
+  --background-color: #f5f5f5;
+  --border-color: #d9d9d9;
+  --text-color: #333;
 }
 
 * {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.agent-config {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.agent-config > div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:disabled {
+  background-color: var(--border-color);
+  cursor: not-allowed;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  flex: 1;
+  background-color: white;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  padding: 10px;
+}
+
+.tabs button.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.tab-content {
+  background: white;
+  border-radius: 0 0 8px 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.state-node {
+  min-width: 200px;
+}
+
+.state-node input,
+.state-node textarea {
+  margin-bottom: 8px;
+}
+
+.state-node.active {
+  border: 2px solid var(--primary-color) !important;
+}
+
+.test-mode .controls {
+  margin-bottom: 20px;
+}
+
+.test-mode .controls button {
+  margin-right: 10px;
+}
+
+.current-state {
+  background-color: #e6f7ff;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.conversation {
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 10px;
+  height: 300px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.message {
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+.message.user {
+  background-color: #f0f2f5;
+  text-align: right;
+}
+
+.message.assistant {
+  background-color: #e6f7ff;
+}
+
+.loading {
+  text-align: center;
+  color: #999;
+  padding: 10px;
+}
+
+form {
+  display: flex;
+}
+
+form input {
+  flex: 1;
+  margin-right: 10px;
 }
