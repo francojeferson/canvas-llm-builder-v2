@@ -106,3 +106,28 @@ npm run dev
    - Conditions use intent matching (not just keywords)
 4. **Save Your Agent**:
    - Click "Save Agent" to persist your configuration
+
+### Testing Your Agent
+
+1. Switch to "Test Mode" tab
+2. Click "Start Test" to begin conversation
+3. The current state will be highlighted on the canvas
+4. Type messages to interact with your agent
+5. Watch as the agent processes inputs and transitions between states
+6. Use "Reset Test" to start over
+
+## Key Design Decisions
+
+1. **ReactFlow for Canvas**: Used for its robust drag-and-drop capabilities and active community support.
+2. **Intent-based Transitions**: Implemented transitions using natural language understanding rather than simple keyword matching. The LLM analyzes user input against transition conditions.
+3. **State Highlighting**: Added visual feedback during testing by highlighting the current active state.
+4. **Zustand for State Management**: Chosen for its simplicity and performance compared to Redux.
+5. **Drizzle ORM**: Used for type-safe database operations with PostgreSQL.
+
+## Future Improvements
+
+- Add live edge highlighting during tests
+- Support different LLM models
+- Add conversation history storage
+- Implement custom tool calls for each state
+- Add export/import functionality for agent configurations
